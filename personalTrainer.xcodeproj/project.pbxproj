@@ -10,9 +10,36 @@
 		152E006B2C1313DC001DD14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E006A2C1313DC001DD14E /* AppDelegate.swift */; };
 		152E006D2C1313DC001DD14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E006C2C1313DC001DD14E /* SceneDelegate.swift */; };
 		152E006F2C1313DC001DD14E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E006E2C1313DC001DD14E /* ViewController.swift */; };
-		152E00722C1313DC001DD14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152E00702C1313DC001DD14E /* Main.storyboard */; };
 		152E00742C1313DE001DD14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152E00732C1313DE001DD14E /* Assets.xcassets */; };
 		152E00772C1313DE001DD14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152E00752C1313DE001DD14E /* LaunchScreen.storyboard */; };
+		15864DE22C132E63009F9BBC /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE12C132E63009F9BBC /* OneSignalExtension */; };
+		15864DE42C132E63009F9BBC /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE32C132E63009F9BBC /* OneSignalFramework */; };
+		15864DE62C132E63009F9BBC /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE52C132E63009F9BBC /* OneSignalInAppMessages */; };
+		15864DE82C132E63009F9BBC /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE72C132E63009F9BBC /* OneSignalLocation */; };
+		15864DEB2C132EFF009F9BBC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DEA2C132EFF009F9BBC /* FirebaseAnalytics */; };
+		15864DED2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DEC2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion */; };
+		15864DEF2C132EFF009F9BBC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DEE2C132EFF009F9BBC /* FirebaseAnalyticsSwift */; };
+		15864DF12C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF02C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		15864DF32C132EFF009F9BBC /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF22C132EFF009F9BBC /* FirebaseAppCheck */; };
+		15864DF62C132F18009F9BBC /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF52C132F18009F9BBC /* ApphudSDK */; };
+		15864DF92C132F4D009F9BBC /* AppMetricaAdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF82C132F4D009F9BBC /* AppMetricaAdSupport */; };
+		15864DFB2C132F4D009F9BBC /* AppMetricaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DFA2C132F4D009F9BBC /* AppMetricaCore */; };
+		15864DFD2C132F4D009F9BBC /* AppMetricaCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DFC2C132F4D009F9BBC /* AppMetricaCrashes */; };
+		15864DFF2C132F4D009F9BBC /* AppMetricaWebKit in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DFE2C132F4D009F9BBC /* AppMetricaWebKit */; };
+		15864E012C132FA3009F9BBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15864E002C132FA3009F9BBC /* GoogleService-Info.plist */; };
+		15864E042C133375009F9BBC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 15864E032C133375009F9BBC /* Alamofire */; };
+		15864E0C2C13392B009F9BBC /* UserLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E0B2C13392B009F9BBC /* UserLoadingViewController.swift */; };
+		15864E122C133A28009F9BBC /* LoadUserOneBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E112C133A27009F9BBC /* LoadUserOneBoardingView.swift */; };
+		15864E152C133AAB009F9BBC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 15864E142C133AAB009F9BBC /* SnapKit */; };
+		15864E192C13442D009F9BBC /* HelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E182C13442D009F9BBC /* HelloViewController.swift */; };
+		15864E1D2C13467B009F9BBC /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E1C2C13467B009F9BBC /* HelloView.swift */; };
+		15864E1F2C148A42009F9BBC /* AthleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E1E2C148A42009F9BBC /* AthleteViewController.swift */; };
+		15864E222C148AD1009F9BBC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E212C148AD1009F9BBC /* TabBarViewController.swift */; };
+		15864E252C149559009F9BBC /* AthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E242C149559009F9BBC /* AthleteView.swift */; };
+		15864E2A2C14B64A009F9BBC /* EditStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E292C14B64A009F9BBC /* EditStatisticViewController.swift */; };
+		15864E2C2C14CFC2009F9BBC /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E2B2C14CFC2009F9BBC /* PlayerModel.swift */; };
+		15864E2E2C14DF1B009F9BBC /* AddNewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E2D2C14DF1B009F9BBC /* AddNewPlayerViewController.swift */; };
+		15864E312C14E005009F9BBC /* NewAthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15864E302C14E005009F9BBC /* NewAthleteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +47,21 @@
 		152E006A2C1313DC001DD14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		152E006C2C1313DC001DD14E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		152E006E2C1313DC001DD14E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		152E00712C1313DC001DD14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		152E00732C1313DE001DD14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		152E00762C1313DE001DD14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		152E00782C1313DE001DD14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15864E002C132FA3009F9BBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		15864E0B2C13392B009F9BBC /* UserLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoadingViewController.swift; sourceTree = "<group>"; };
+		15864E112C133A27009F9BBC /* LoadUserOneBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadUserOneBoardingView.swift; sourceTree = "<group>"; };
+		15864E182C13442D009F9BBC /* HelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloViewController.swift; sourceTree = "<group>"; };
+		15864E1C2C13467B009F9BBC /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
+		15864E1E2C148A42009F9BBC /* AthleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteViewController.swift; sourceTree = "<group>"; };
+		15864E212C148AD1009F9BBC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		15864E242C149559009F9BBC /* AthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteView.swift; sourceTree = "<group>"; };
+		15864E292C14B64A009F9BBC /* EditStatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatisticViewController.swift; sourceTree = "<group>"; };
+		15864E2B2C14CFC2009F9BBC /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		15864E2D2C14DF1B009F9BBC /* AddNewPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlayerViewController.swift; sourceTree = "<group>"; };
+		15864E302C14E005009F9BBC /* NewAthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAthleteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +69,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15864E042C133375009F9BBC /* Alamofire in Frameworks */,
+				15864E152C133AAB009F9BBC /* SnapKit in Frameworks */,
+				15864DE62C132E63009F9BBC /* OneSignalInAppMessages in Frameworks */,
+				15864DED2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				15864DE42C132E63009F9BBC /* OneSignalFramework in Frameworks */,
+				15864DE82C132E63009F9BBC /* OneSignalLocation in Frameworks */,
+				15864DEF2C132EFF009F9BBC /* FirebaseAnalyticsSwift in Frameworks */,
+				15864DEB2C132EFF009F9BBC /* FirebaseAnalytics in Frameworks */,
+				15864DE22C132E63009F9BBC /* OneSignalExtension in Frameworks */,
+				15864DF62C132F18009F9BBC /* ApphudSDK in Frameworks */,
+				15864DF32C132EFF009F9BBC /* FirebaseAppCheck in Frameworks */,
+				15864DFB2C132F4D009F9BBC /* AppMetricaCore in Frameworks */,
+				15864DFF2C132F4D009F9BBC /* AppMetricaWebKit in Frameworks */,
+				15864DF92C132F4D009F9BBC /* AppMetricaAdSupport in Frameworks */,
+				15864DF12C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				15864DFD2C132F4D009F9BBC /* AppMetricaCrashes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +110,154 @@
 		152E00692C1313DC001DD14E /* personalTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				152E006A2C1313DC001DD14E /* AppDelegate.swift */,
-				152E006C2C1313DC001DD14E /* SceneDelegate.swift */,
-				152E006E2C1313DC001DD14E /* ViewController.swift */,
-				152E00702C1313DC001DD14E /* Main.storyboard */,
-				152E00732C1313DE001DD14E /* Assets.xcassets */,
-				152E00752C1313DE001DD14E /* LaunchScreen.storyboard */,
+				152E00812C131434001DD14E /* SupportFiles */,
+				152E00802C1313ED001DD14E /* Controller */,
+				152E007F2C1313E9001DD14E /* View */,
+				152E007E2C1313E4001DD14E /* Model */,
 				152E00782C1313DE001DD14E /* Info.plist */,
+				15864E002C132FA3009F9BBC /* GoogleService-Info.plist */,
 			);
 			path = personalTrainer;
+			sourceTree = "<group>";
+		};
+		152E007E2C1313E4001DD14E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15864E2B2C14CFC2009F9BBC /* PlayerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		152E007F2C1313E9001DD14E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15864E0E2C1339D2009F9BBC /* User */,
+				15864E0D2C1339B3009F9BBC /* Review */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		152E00802C1313ED001DD14E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15864E062C133856009F9BBC /* Review */,
+				15864E052C13384E009F9BBC /* User */,
+				152E006E2C1313DC001DD14E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		152E00812C131434001DD14E /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				152E006C2C1313DC001DD14E /* SceneDelegate.swift */,
+				152E00732C1313DE001DD14E /* Assets.xcassets */,
+				152E00752C1313DE001DD14E /* LaunchScreen.storyboard */,
+				152E006A2C1313DC001DD14E /* AppDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		15864E052C13384E009F9BBC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				15864E202C148A4D009F9BBC /* TabBar */,
+				15864E072C13389A009F9BBC /* OneBoarding */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		15864E062C133856009F9BBC /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				15864E082C1338A5009F9BBC /* OneBoarding */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		15864E072C13389A009F9BBC /* OneBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				15864E0B2C13392B009F9BBC /* UserLoadingViewController.swift */,
+				15864E182C13442D009F9BBC /* HelloViewController.swift */,
+			);
+			path = OneBoarding;
+			sourceTree = "<group>";
+		};
+		15864E082C1338A5009F9BBC /* OneBoarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OneBoarding;
+			sourceTree = "<group>";
+		};
+		15864E0D2C1339B3009F9BBC /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				15864E102C1339DF009F9BBC /* OneBoarding */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		15864E0E2C1339D2009F9BBC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				15864E232C149546009F9BBC /* TabBar */,
+				15864E0F2C1339D7009F9BBC /* OneBoarding */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		15864E0F2C1339D7009F9BBC /* OneBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				15864E112C133A27009F9BBC /* LoadUserOneBoardingView.swift */,
+				15864E1C2C13467B009F9BBC /* HelloView.swift */,
+			);
+			path = OneBoarding;
+			sourceTree = "<group>";
+		};
+		15864E102C1339DF009F9BBC /* OneBoarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OneBoarding;
+			sourceTree = "<group>";
+		};
+		15864E202C148A4D009F9BBC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				15864E262C14A6D2009F9BBC /* AthletePage */,
+				15864E212C148AD1009F9BBC /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		15864E232C149546009F9BBC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				15864E2F2C14DFF0009F9BBC /* AthletePage */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		15864E262C14A6D2009F9BBC /* AthletePage */ = {
+			isa = PBXGroup;
+			children = (
+				15864E1E2C148A42009F9BBC /* AthleteViewController.swift */,
+				15864E292C14B64A009F9BBC /* EditStatisticViewController.swift */,
+				15864E2D2C14DF1B009F9BBC /* AddNewPlayerViewController.swift */,
+			);
+			path = AthletePage;
+			sourceTree = "<group>";
+		};
+		15864E2F2C14DFF0009F9BBC /* AthletePage */ = {
+			isa = PBXGroup;
+			children = (
+				15864E242C149559009F9BBC /* AthleteView.swift */,
+				15864E302C14E005009F9BBC /* NewAthleteView.swift */,
+			);
+			path = AthletePage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +276,24 @@
 			dependencies = (
 			);
 			name = personalTrainer;
+			packageProductDependencies = (
+				15864DE12C132E63009F9BBC /* OneSignalExtension */,
+				15864DE32C132E63009F9BBC /* OneSignalFramework */,
+				15864DE52C132E63009F9BBC /* OneSignalInAppMessages */,
+				15864DE72C132E63009F9BBC /* OneSignalLocation */,
+				15864DEA2C132EFF009F9BBC /* FirebaseAnalytics */,
+				15864DEC2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion */,
+				15864DEE2C132EFF009F9BBC /* FirebaseAnalyticsSwift */,
+				15864DF02C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport */,
+				15864DF22C132EFF009F9BBC /* FirebaseAppCheck */,
+				15864DF52C132F18009F9BBC /* ApphudSDK */,
+				15864DF82C132F4D009F9BBC /* AppMetricaAdSupport */,
+				15864DFA2C132F4D009F9BBC /* AppMetricaCore */,
+				15864DFC2C132F4D009F9BBC /* AppMetricaCrashes */,
+				15864DFE2C132F4D009F9BBC /* AppMetricaWebKit */,
+				15864E032C133375009F9BBC /* Alamofire */,
+				15864E142C133AAB009F9BBC /* SnapKit */,
+			);
 			productName = personalTrainer;
 			productReference = 152E00672C1313DC001DD14E /* personalTrainer.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +322,14 @@
 				Base,
 			);
 			mainGroup = 152E005E2C1313DC001DD14E;
+			packageReferences = (
+				15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				15864DF42C132F18009F9BBC /* XCRemoteSwiftPackageReference "ApphudSDK" */,
+				15864DF72C132F4D009F9BBC /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
+				15864E022C133375009F9BBC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				15864E132C133AAB009F9BBC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 152E00682C1313DC001DD14E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +346,7 @@
 			files = (
 				152E00772C1313DE001DD14E /* LaunchScreen.storyboard in Resources */,
 				152E00742C1313DE001DD14E /* Assets.xcassets in Resources */,
-				152E00722C1313DC001DD14E /* Main.storyboard in Resources */,
+				15864E012C132FA3009F9BBC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,22 +358,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				152E006F2C1313DC001DD14E /* ViewController.swift in Sources */,
+				15864E312C14E005009F9BBC /* NewAthleteView.swift in Sources */,
 				152E006B2C1313DC001DD14E /* AppDelegate.swift in Sources */,
+				15864E2E2C14DF1B009F9BBC /* AddNewPlayerViewController.swift in Sources */,
+				15864E2A2C14B64A009F9BBC /* EditStatisticViewController.swift in Sources */,
+				15864E0C2C13392B009F9BBC /* UserLoadingViewController.swift in Sources */,
+				15864E192C13442D009F9BBC /* HelloViewController.swift in Sources */,
+				15864E222C148AD1009F9BBC /* TabBarViewController.swift in Sources */,
+				15864E2C2C14CFC2009F9BBC /* PlayerModel.swift in Sources */,
+				15864E1F2C148A42009F9BBC /* AthleteViewController.swift in Sources */,
 				152E006D2C1313DC001DD14E /* SceneDelegate.swift in Sources */,
+				15864E1D2C13467B009F9BBC /* HelloView.swift in Sources */,
+				15864E252C149559009F9BBC /* AthleteView.swift in Sources */,
+				15864E122C133A28009F9BBC /* LoadUserOneBoardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		152E00702C1313DC001DD14E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				152E00712C1313DC001DD14E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		152E00752C1313DE001DD14E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -218,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -297,9 +519,10 @@
 				INFOPLIST_FILE = personalTrainer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +530,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = k.personalTrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,9 +552,10 @@
 				INFOPLIST_FILE = personalTrainer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +563,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = k.personalTrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,6 +595,140 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.27.0;
+			};
+		};
+		15864DF42C132F18009F9BBC /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apphud/ApphudSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.7;
+			};
+		};
+		15864DF72C132F4D009F9BBC /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appmetrica/appmetrica-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		15864E022C133375009F9BBC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		15864E132C133AAB009F9BBC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15864DE12C132E63009F9BBC /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+		15864DE32C132E63009F9BBC /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
+		15864DE52C132E63009F9BBC /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalInAppMessages;
+		};
+		15864DE72C132E63009F9BBC /* OneSignalLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalLocation;
+		};
+		15864DEA2C132EFF009F9BBC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		15864DEC2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		15864DEE2C132EFF009F9BBC /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		15864DF02C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		15864DF22C132EFF009F9BBC /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		15864DF52C132F18009F9BBC /* ApphudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DF42C132F18009F9BBC /* XCRemoteSwiftPackageReference "ApphudSDK" */;
+			productName = ApphudSDK;
+		};
+		15864DF82C132F4D009F9BBC /* AppMetricaAdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DF72C132F4D009F9BBC /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaAdSupport;
+		};
+		15864DFA2C132F4D009F9BBC /* AppMetricaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DF72C132F4D009F9BBC /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCore;
+		};
+		15864DFC2C132F4D009F9BBC /* AppMetricaCrashes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DF72C132F4D009F9BBC /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCrashes;
+		};
+		15864DFE2C132F4D009F9BBC /* AppMetricaWebKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864DF72C132F4D009F9BBC /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaWebKit;
+		};
+		15864E032C133375009F9BBC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864E022C133375009F9BBC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		15864E142C133AAB009F9BBC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15864E132C133AAB009F9BBC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 152E005F2C1313DC001DD14E /* Project object */;
 }
