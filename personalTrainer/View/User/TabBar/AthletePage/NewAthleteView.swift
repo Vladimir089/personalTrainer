@@ -33,15 +33,6 @@ class NewAthleteView: UIView {
     }()
     
     
-//    let addButton: UIButton = {
-//        let button = UIButton()
-//        button.setTitle("Add", for: .normal)
-//        button.setTitleColor(.primary, for: .normal)
-//        button.setTitleColor(.primary.withAlphaComponent(0.6), for: .disabled)
-//        return button
-//    }()
-    
-    
     override init(frame: CGRect) {
         super .init(frame: frame)
         settingsElements()
@@ -60,7 +51,7 @@ class NewAthleteView: UIView {
         addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(15)
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(10)
+            make.top.equalToSuperview().inset(100)
             make.height.equalTo(118)
         }
         
@@ -165,6 +156,28 @@ class NewAthleteView: UIView {
 extension NewAthleteView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
+        
+        if let name = (textField == nameTextField ? currentText : nameTextField?.text),
+           let age = (textField == ageTextField ? currentText : ageTextField?.text),
+           let weight = (textField == weightTextField ? currentText : weightTextField?.text),
+           let height = (textField == heightTextField ? currentText : heightTextField?.text),
+           let classes = (textField == classesTextField ? currentText : classesTextField?.text),
+           let duration = (textField == durationTextField ? currentText : durationTextField?.text),
+           !name.isEmpty,
+           !age.isEmpty,
+           !weight.isEmpty,
+           !height.isEmpty,
+           !classes.isEmpty,
+           !duration.isEmpty {
+            delegate?.toggleButton(isOn: true)
+        } else {
+            delegate?.toggleButton(isOn: false)
+        }
         return true
     }
 }

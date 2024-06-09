@@ -10,30 +10,29 @@ import UIKit
 
 struct Player: Codable {
     var name: String
-    var age: Int
-    var height: Double
-    var weight: Double
-    var classesPerMonth: Int
-    var duration: Double
-    var imageData: Data
-    var achivements: [Achivement]
+    var age: String
+    var height: String
+    var weight: String
+    var classesPerMonth: String
+    var duration: String
+    var imageData: Data?
+    var achivements: [Achivement]?
     
     
-    init(name: String, age: Int, height: Double, weight: Double, classesPerMonth: Int, duration: Double, image: UIImage, achivements: [Achivement]) {
+    init(name: String, age: String, height: String, weight: String, classesPerMonth: String, duration: String, image: UIImage? = nil, achivements: [Achivement]? = nil) {
         self.name = name
         self.age = age
         self.height = height
         self.weight = weight
         self.classesPerMonth = classesPerMonth
         self.duration = duration
-        self.imageData = image.jpegData(compressionQuality: 1.0)! // или PNG -> imageData = image.pngData()!
+        self.imageData = image?.jpegData(compressionQuality: 0.1)!
+        
+        
         self.achivements = achivements
     }
     
     
-    func getImage() -> UIImage? {
-        return UIImage(data: self.imageData)
-    }
 }
 
 

@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddNewPlayerViewControllerDelegate: AnyObject {
     func selectImage()
+    func toggleButton(isOn: Bool)
 }
 
 
@@ -19,6 +20,8 @@ class AddNewPlayerViewController: UIViewController {
     var mainView: NewAthleteView?
     
     var rightButton: UIBarButtonItem?
+    
+    var delegate: AthleteViewControllerDelegate?
     
     
     override func viewDidLoad() {
@@ -46,15 +49,22 @@ class AddNewPlayerViewController: UIViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         UIView.animate(withDuration: 0.3) {
-            self.view.transform = CGAffineTransform(translationX: 0, y: -100)
+            self.mainView?.imageView.snp.updateConstraints({ make in
+                make.top.equalToSuperview().inset(-10)
+            })
+            self.mainView?.layoutIfNeeded()
             self.mainView?.imageView.alpha = 0
             self.mainView?.selectButtonImage.alpha = 0
         }
     }
     
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         UIView.animate(withDuration: 0.3) {
-            self.view.transform = .identity
+            self.mainView?.imageView.snp.updateConstraints({ make in
+                make.top.equalToSuperview().inset(100)
+            })
+            self.mainView?.layoutIfNeeded()
             self.mainView?.imageView.alpha = 1
             self.mainView?.selectButtonImage.alpha = 1
         }
@@ -71,7 +81,19 @@ class AddNewPlayerViewController: UIViewController {
     
     
     @objc func addButtonTapped() {
-        //ДОДЕЛАТЬ ДОБАВЛЕНИЕ ИГРОКА И АКТИВАЦИЮ КНОПКИ ЕСЛИ ВСЕ ДАННЫЕ ЗАПОЛНЕНЫ
+        let player = Player(name: mainView?.nameTextField?.text ?? "", age: mainView?.ageTextField?.text ?? "", height: mainView?.heightTextField?.text ?? "", weight: mainView?.weightTextField?.text ?? "", classesPerMonth: mainView?.classesTextField?.text ?? "", duration: mainView?.durationTextField?.text ?? "", image: mainView?.imageView.image ?? UIImage(), achivements: nil)
+        
+        athleteArr.append(player)
+        
+        // Сериализация массива в Data
+        do {
+            let data = try JSONEncoder().encode(athleteArr)
+            UserDefaults.standard.set(data, forKey: "athleteArr")
+            UserDefaults.standard.synchronize()
+            delegate?.updateArr(athleteArr: athleteArr)
+        } catch {
+            print("Failed to encode athleteArr: \(error)")
+        }
     }
     
     
@@ -88,6 +110,11 @@ extension UINavigationController {
 extension AddNewPlayerViewController: AddNewPlayerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
+    func toggleButton(isOn: Bool) {
+        navigationItem.rightBarButtonItem?.isEnabled = isOn
+    }
+    
+    
     func selectImage() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -101,7 +128,6 @@ extension AddNewPlayerViewController: AddNewPlayerViewControllerDelegate, UIImag
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any] ) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            // Обновляем imageView с выбранным изображением
             mainView?.imageView.image = pickedImage
         }
         dismiss(animated: true, completion: nil)

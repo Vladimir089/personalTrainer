@@ -11,6 +11,7 @@ import UIKit
 protocol AthleteViewControllerDelegate: AnyObject {
     func showEditView(amountLabel: UILabel, totalLabel: UILabel)
     func addNewPlayer()
+    func updateArr(athleteArr: [Player])
 }
 
 
@@ -23,26 +24,23 @@ class AthleteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkAthleteArr()
         mainView = AthleteView()
         mainView?.delegate = self
         self.view = mainView
-        checkAthleteArr()
     }
     
     
     func checkAthleteArr() {
         if let data = UserDefaults.standard.data(forKey: "athleteArr") {
             do {
-                let decoder = JSONDecoder()
-                athleteArr = try decoder.decode([Player].self, from: data)
-                mainView?.athleteArr = athleteArr
+                athleteArr = try JSONDecoder().decode([Player].self, from: data)
             } catch {
-                print("Не удалось декодировать массив игроков: \(error)")
+                print("Failed to decode athleteArr: \(error)")
             }
-        } else {
-            athleteArr = []
         }
     }
+    
     
     
 }
@@ -50,10 +48,16 @@ class AthleteViewController: UIViewController {
 
 extension AthleteViewController: AthleteViewControllerDelegate {
     
+    func updateArr(athleteArr: [Player]) {
+        self.athleteArr = athleteArr
+        //обновляем коллецию в мэин вью
+    }
+    
+    
     func addNewPlayer() {
         let vc = AddNewPlayerViewController()
         vc.athleteArr = self.athleteArr
-        
+        vc.delegate = self
         // Устанавливаем текст кнопки "Back" в предыдущем контроллере
         navigationController?.topViewController?.navigationItem.title = " "
         navigationController?.pushViewController(vc, animated: true)
