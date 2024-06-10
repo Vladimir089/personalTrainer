@@ -15,6 +15,8 @@ class NewAthleteView: UIView {
     
     var nameTextField, ageTextField, weightTextField, heightTextField, classesTextField, durationTextField: UITextField?
     
+    var achivements: [Achivement] = []
+    
     
     var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -149,6 +151,9 @@ class NewAthleteView: UIView {
         delegate?.selectImage()
     }
     
+    
+    
+    
 }
 
 
@@ -158,6 +163,7 @@ extension NewAthleteView: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
@@ -173,13 +179,15 @@ extension NewAthleteView: UITextFieldDelegate {
            !weight.isEmpty,
            !height.isEmpty,
            !classes.isEmpty,
-           !duration.isEmpty {
+           !duration.isEmpty,
+           imageView.image != nil {
             delegate?.toggleButton(isOn: true)
         } else {
             delegate?.toggleButton(isOn: false)
         }
         return true
     }
+    
 }
 
 

@@ -26,7 +26,7 @@ struct Player: Codable {
         self.weight = weight
         self.classesPerMonth = classesPerMonth
         self.duration = duration
-        self.imageData = image?.jpegData(compressionQuality: 0.1)!
+        self.imageData = image?.jpegData(compressionQuality: 0.5)!
         
         
         self.achivements = achivements

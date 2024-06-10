@@ -17,6 +17,8 @@ class AthleteView: UIView {
     
     var athleteArr: [Player] = []
     
+    var collectionAthleteArr: [(String, UIImage)] = []
+    
     var amountPlayersLabel: UILabel = {
         let label = UILabel()
         let amount = UserDefaults.standard.integer(forKey: "amount")
@@ -40,6 +42,13 @@ class AthleteView: UIView {
         view.backgroundColor = .BG.withAlphaComponent(0.1)
         view.clipsToBounds = true
         return view
+    }()
+    
+    var addButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(.plus, for: .normal)
+        button.tintColor = .white
+        return button
     }()
     
 
@@ -71,7 +80,7 @@ class AthleteView: UIView {
         }()
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(40)
             make.left.equalToSuperview().inset(15)
         }
         
@@ -266,6 +275,10 @@ class AthleteView: UIView {
             collectionView.backgroundColor = .white
             collectionView.translatesAutoresizingMaskIntoConstraints = false
             collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.backgroundColor = .BG
+            collectionView.showsVerticalScrollIndicator = false
             return collectionView
         }()
         addSubview(collectionView ?? UIView())
@@ -274,6 +287,16 @@ class AthleteView: UIView {
             make.left.right.equalToSuperview().inset(15)
             make.top.equalTo((topView ?? UIView()).snp.bottom).inset(-10)
         })
+        
+        addSubview(addButton)
+        addButton.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+            make.right.equalToSuperview().inset(15)
+            make.top.equalToSuperview().inset(60)
+        }
+        
+        
+        
         checkArray()
         
         
@@ -281,10 +304,23 @@ class AthleteView: UIView {
     
     
     func checkArray() {
+        print(athleteArr)
+        collectionAthleteArr.removeAll()
         if athleteArr.count == 0 {
             collectionView?.alpha = 0
+            addButton.alpha = 0
         } else {
             collectionView?.alpha = 1
+            addButton.addTarget(self, action: #selector(addNewPlayer), for: .touchUpInside)
+            addButton.alpha = 1
+            
+            for i in athleteArr {
+                let image = UIImage(data: i.imageData ?? Data())
+                collectionAthleteArr.append((i.name, image!))
+            }
+            
+            collectionView?.reloadData()
+            
         }
     }
     
@@ -300,4 +336,83 @@ class AthleteView: UIView {
     
     
     //
+}
+
+extension AthleteView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionAthleteArr.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .second
+        cell.layer.cornerRadius = 12
+        cell.subviews.forEach { $0.removeFromSuperview() }
+        
+        //MARK: -settings cell
+        
+        let label = UILabel()
+        label.text = collectionAthleteArr[indexPath.row].0
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        cell.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(15)
+            make.height.equalTo(20)
+        }
+        
+        let image = collectionAthleteArr[indexPath.row].1
+        let imageView = UIImageView(image: image)
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 12
+        cell.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.left.right.top.equalToSuperview().inset(10)
+            make.bottom.equalTo(label.snp.top).inset(-15)
+        }
+        
+        
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedAthleteName = collectionAthleteArr[indexPath.item].0
+
+        if let playerIndex = athleteArr.firstIndex(where: { $0.name == selectedAthleteName }) {
+            let selectedPlayer = athleteArr[playerIndex]
+            delegate?.openDetailPlayerVC(player: selectedPlayer, indexPatch: playerIndex)
+        } else {
+            print("Player not found")
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Определяем количество ячеек в ряду
+        let numberOfItemsPerRow: CGFloat = 2
+        let totalSpacing = (numberOfItemsPerRow - 1) * 10
+        let itemWidth = (collectionView.bounds.width - totalSpacing) / numberOfItemsPerRow
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    
 }

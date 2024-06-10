@@ -36,6 +36,7 @@ class AddNewPlayerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -74,28 +75,95 @@ class AddNewPlayerViewController: UIViewController {
     func settingsNavController() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.primary
+        
         rightButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addButtonTapped))
         rightButton?.isEnabled = false
-        navigationItem.rightBarButtonItem = rightButton
+        
+        let image = UIImage.plus.resize(to: CGSize(width: 20, height: 20))
+        let extraButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(extraButtonTapped))
+        navigationItem.rightBarButtonItems = [rightButton!, extraButton]
+    }
+    
+    
+    @objc func extraButtonTapped() {
+        let alert = UIAlertController(title: "Add new achivement", message: "Please enter the details", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Achivement"
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Detail"
+        }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak alert] _ in
+            guard let textFields = alert?.textFields else { return }
+            let field1Text = textFields[0].text ?? ""
+            let field2Text = textFields[1].text ?? ""
+            
+            self.saveData(field1: field1Text, field2: field2Text)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func saveData(field1: String, field2: String) {
+        print("First field: \(field1), Second field: \(field2)")
+        let achivement = Achivement(mainText: field1, secondaryText: field2)
+        mainView?.achivements.append(achivement)
     }
     
     
     @objc func addButtonTapped() {
-        let player = Player(name: mainView?.nameTextField?.text ?? "", age: mainView?.ageTextField?.text ?? "", height: mainView?.heightTextField?.text ?? "", weight: mainView?.weightTextField?.text ?? "", classesPerMonth: mainView?.classesTextField?.text ?? "", duration: mainView?.durationTextField?.text ?? "", image: mainView?.imageView.image ?? UIImage(), achivements: nil)
+        let player = Player(name: mainView?.nameTextField?.text ?? "", age: mainView?.ageTextField?.text ?? "", height: mainView?.heightTextField?.text ?? "", weight: mainView?.weightTextField?.text ?? "", classesPerMonth: mainView?.classesTextField?.text ?? "", duration: mainView?.durationTextField?.text ?? "", image: mainView?.imageView.image ?? UIImage(), achivements: mainView?.achivements)
         
         athleteArr.append(player)
         
         // Сериализация массива в Data
         do {
             let data = try JSONEncoder().encode(athleteArr)
-            UserDefaults.standard.set(data, forKey: "athleteArr")
-            UserDefaults.standard.synchronize()
+            try saveAthleteArrToFile(data: data)
             delegate?.updateArr(athleteArr: athleteArr)
+            navigationController?.popViewController(animated: true)
         } catch {
-            print("Failed to encode athleteArr: \(error)")
+            print("Failed to encode or save athleteArr: \(error)")
         }
     }
     
+    
+    func saveAthleteArrToFile(data: Data) throws {
+        let fileManager = FileManager.default
+        if let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let filePath = documentDirectory.appendingPathComponent("athleteArr.plist")
+            try data.write(to: filePath)
+        } else {
+            throw NSError(domain: "SaveError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Unable to get document directory"])
+        }
+    }
+    
+    
+    func checkIfInputsAreValid() {
+        let isValid = (mainView?.nameTextField?.text?.isEmpty == false) &&
+        (mainView?.ageTextField?.text?.isEmpty == false) &&
+        (mainView?.weightTextField?.text?.isEmpty == false) &&
+        (mainView?.heightTextField?.text?.isEmpty == false) &&
+        (mainView?.classesTextField?.text?.isEmpty == false) &&
+        (mainView?.durationTextField?.text?.isEmpty == false) &&
+        (mainView?.imageView.image != nil)
+        
+        toggleSaveButton(isOn: isValid)
+    }
+
+    func toggleSaveButton(isOn: Bool) {
+        navigationItem.rightBarButtonItem?.isEnabled = isOn
+    }
+
     
 }
 
@@ -131,6 +199,8 @@ extension AddNewPlayerViewController: AddNewPlayerViewControllerDelegate, UIImag
             mainView?.imageView.image = pickedImage
         }
         dismiss(animated: true, completion: nil)
+        
+        checkIfInputsAreValid()
     }
     
     
