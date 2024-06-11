@@ -18,7 +18,8 @@ class ViewController: UIViewController {
             switch result {
             case .success(let value):
                 if value == false {
-                    //тут для ревьювера
+                    let reviewerViewController = ReviewerViewController()
+                    self.navigationController?.setViewControllers([reviewerViewController], animated: true)
                 } else {
                     let userLoadingViewController = UserLoadingViewController()
                     self.navigationController?.setViewControllers([userLoadingViewController], animated: true)
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
     }
 
     func checkUser(completion: @escaping (Result<Bool, Error>) -> Void) {
-        completion(.success(true))
+        completion(.success(true)) //МЕНЯТЬ
     }
     
 }
