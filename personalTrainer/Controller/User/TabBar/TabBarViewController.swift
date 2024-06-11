@@ -13,21 +13,27 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         let athleteVC = AthleteViewController()
+        let trainingVC = TrainingViewController()
         
         
         let originalImage1 = UIImage(named: "AthletesImage")
         let resizedImage1 = originalImage1?.resize(to: CGSize(width: 23, height: 21))
+        
+        let originalImage2 = UIImage(named: "TrainingImage")
+        let resizedImage2 = originalImage2?.resize(to: CGSize(width: 21, height: 21))
        
         
         athleteVC.tabBarItem = UITabBarItem(title: "Athletes", image: resizedImage1, tag: 0)
+        trainingVC.tabBarItem = UITabBarItem(title: "Training", image: resizedImage2, tag: 1)
         
         
-        viewControllers = [athleteVC]
+        viewControllers = [athleteVC, trainingVC]
         
         
         
         tabBar.backgroundColor = .black
         tabBar.tintColor = .primary
+        tabBar.unselectedItemTintColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1)
         
         let rectangle = UIView()
         rectangle.backgroundColor = .darkGray

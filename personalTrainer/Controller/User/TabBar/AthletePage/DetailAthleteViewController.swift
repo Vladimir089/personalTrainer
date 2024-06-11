@@ -42,6 +42,7 @@ class DetailAthleteViewController: UIViewController {
         settingsView()
     }
     
+   
     
     func settingsNavController() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

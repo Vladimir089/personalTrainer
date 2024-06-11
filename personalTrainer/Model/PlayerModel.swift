@@ -27,8 +27,6 @@ struct Player: Codable {
         self.classesPerMonth = classesPerMonth
         self.duration = duration
         self.imageData = image?.jpegData(compressionQuality: 0.5)!
-        
-        
         self.achivements = achivements
     }
     
@@ -40,3 +38,5 @@ struct Achivement: Codable {
     var mainText: String
     var secondaryText: String?
 }
+
+var playersArr: [Player] = []

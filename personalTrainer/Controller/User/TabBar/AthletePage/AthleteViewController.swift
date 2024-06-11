@@ -40,6 +40,7 @@ class AthleteViewController: UIViewController {
             DispatchQueue.main.async {
                 self.mainView?.athleteArr = self.athleteArr
                 self.mainView?.checkArray()
+                playersArr = self.athleteArr
             }
         } else {
             print("No existing athleteArr found or failed to load.")
@@ -103,6 +104,7 @@ extension AthleteViewController: AthleteViewControllerDelegate {
         } else {
             print("No existing athleteArr found or failed to load.")
         }
+        playersArr = self.athleteArr
         mainView?.collectionView?.reloadData()
     }
     
@@ -125,6 +127,7 @@ extension AthleteViewController: AthleteViewControllerDelegate {
         } else {
             print("No existing athleteArr found or failed to load.")
         }
+        playersArr = self.athleteArr
         mainView?.collectionView?.reloadData()
     }
     
