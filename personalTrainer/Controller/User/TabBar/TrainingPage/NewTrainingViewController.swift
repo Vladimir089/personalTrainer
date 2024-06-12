@@ -118,6 +118,7 @@ class NewTrainingViewController: UIViewController {
         let alertController = UIAlertController(title: "Select Players", message: nil, preferredStyle: .actionSheet)
 
         for player in playersArr {
+            print(player.name)
             let action = UIAlertAction(title: player.name, style: .default) { _ in
                 self.togglePlayerSelection(player: player)
             }

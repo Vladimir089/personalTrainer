@@ -14,6 +14,7 @@ class TabBarViewController: UITabBarController {
 
         let athleteVC = AthleteViewController()
         let trainingVC = TrainingViewController()
+        let calendarVC = CalendarViewController()
         
         
         let originalImage1 = UIImage(named: "AthletesImage")
@@ -21,13 +22,16 @@ class TabBarViewController: UITabBarController {
         
         let originalImage2 = UIImage(named: "TrainingImage")
         let resizedImage2 = originalImage2?.resize(to: CGSize(width: 21, height: 21))
+        
+        let originalImage3 = UIImage(named: "CalendarImage")
+        let resizedImage3 = originalImage3?.resize(to: CGSize(width: 23, height: 21))
        
         
         athleteVC.tabBarItem = UITabBarItem(title: "Athletes", image: resizedImage1, tag: 0)
         trainingVC.tabBarItem = UITabBarItem(title: "Training", image: resizedImage2, tag: 1)
+        calendarVC.tabBarItem = UITabBarItem(title: "Calendar", image: resizedImage3, tag: 2)
         
-        
-        viewControllers = [athleteVC, trainingVC]
+        viewControllers = [athleteVC, trainingVC, calendarVC ]
         
         
         

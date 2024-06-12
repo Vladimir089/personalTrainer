@@ -52,6 +52,11 @@
 		159590432C18DB29000D78C6 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590422C18DB29000D78C6 /* ThreeViewController.swift */; };
 		159590452C18DEDA000D78C6 /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590442C18DEDA000D78C6 /* NotifyViewController.swift */; };
 		159590472C18E24C000D78C6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590462C18E24C000D78C6 /* WebViewController.swift */; };
+		1595904A2C19A73C000D78C6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590492C19A73C000D78C6 /* CalendarViewController.swift */; };
+		1595904D2C19A75D000D78C6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595904C2C19A75D000D78C6 /* CalendarView.swift */; };
+		1595904F2C19ABFD000D78C6 /* EditAndNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595904E2C19ABFD000D78C6 /* EditAndNewEventViewController.swift */; };
+		159590512C19AD83000D78C6 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590502C19AD83000D78C6 /* CalendarModel.swift */; };
+		159590532C19D5AA000D78C6 /* DetailCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590522C19D5AA000D78C6 /* DetailCalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +91,11 @@
 		159590422C18DB29000D78C6 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 		159590442C18DEDA000D78C6 /* NotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
 		159590462C18E24C000D78C6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		159590492C19A73C000D78C6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		1595904C2C19A75D000D78C6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		1595904E2C19ABFD000D78C6 /* EditAndNewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAndNewEventViewController.swift; sourceTree = "<group>"; };
+		159590502C19AD83000D78C6 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		159590522C19D5AA000D78C6 /* DetailCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +159,7 @@
 			children = (
 				15864E2B2C14CFC2009F9BBC /* PlayerModel.swift */,
 				159590382C186420000D78C6 /* TrainingModel.swift */,
+				159590502C19AD83000D78C6 /* CalendarModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 		15864E202C148A4D009F9BBC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				159590482C19A724000D78C6 /* CalendarPage */,
 				159590322C185F66000D78C6 /* TrainingPage */,
 				15864E262C14A6D2009F9BBC /* AthletePage */,
 				15864E212C148AD1009F9BBC /* TabBarViewController.swift */,
@@ -267,6 +279,7 @@
 		15864E232C149546009F9BBC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				1595904B2C19A746000D78C6 /* CalendarPage */,
 				159590352C1862D8000D78C6 /* TrainingPage */,
 				15864E2F2C14DFF0009F9BBC /* AthletePage */,
 			);
@@ -310,6 +323,24 @@
 				159590362C1862F0000D78C6 /* TrainingView.swift */,
 			);
 			path = TrainingPage;
+			sourceTree = "<group>";
+		};
+		159590482C19A724000D78C6 /* CalendarPage */ = {
+			isa = PBXGroup;
+			children = (
+				159590492C19A73C000D78C6 /* CalendarViewController.swift */,
+				1595904E2C19ABFD000D78C6 /* EditAndNewEventViewController.swift */,
+				159590522C19D5AA000D78C6 /* DetailCalendarViewController.swift */,
+			);
+			path = CalendarPage;
+			sourceTree = "<group>";
+		};
+		1595904B2C19A746000D78C6 /* CalendarPage */ = {
+			isa = PBXGroup;
+			children = (
+				1595904C2C19A75D000D78C6 /* CalendarView.swift */,
+			);
+			path = CalendarPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,10 +441,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				152E006F2C1313DC001DD14E /* ViewController.swift in Sources */,
+				159590512C19AD83000D78C6 /* CalendarModel.swift in Sources */,
 				1595903D2C189310000D78C6 /* DetailTrainingViewController.swift in Sources */,
 				15864E312C14E005009F9BBC /* NewAthleteView.swift in Sources */,
 				159590432C18DB29000D78C6 /* ThreeViewController.swift in Sources */,
 				152E006B2C1313DC001DD14E /* AppDelegate.swift in Sources */,
+				1595904F2C19ABFD000D78C6 /* EditAndNewEventViewController.swift in Sources */,
 				159590392C186420000D78C6 /* TrainingModel.swift in Sources */,
 				15864E2E2C14DF1B009F9BBC /* AddNewPlayerViewController.swift in Sources */,
 				159590372C1862F0000D78C6 /* TrainingView.swift in Sources */,
@@ -431,8 +464,11 @@
 				15864E1F2C148A42009F9BBC /* AthleteViewController.swift in Sources */,
 				15864E372C174648009F9BBC /* EditPlayerViewController.swift in Sources */,
 				159590342C18608F000D78C6 /* TrainingViewController.swift in Sources */,
+				159590532C19D5AA000D78C6 /* DetailCalendarViewController.swift in Sources */,
+				1595904D2C19A75D000D78C6 /* CalendarView.swift in Sources */,
 				152E006D2C1313DC001DD14E /* SceneDelegate.swift in Sources */,
 				15864E1D2C13467B009F9BBC /* HelloView.swift in Sources */,
+				1595904A2C19A73C000D78C6 /* CalendarViewController.swift in Sources */,
 				15864E252C149559009F9BBC /* AthleteView.swift in Sources */,
 				15864E122C133A28009F9BBC /* LoadUserOneBoardingView.swift in Sources */,
 			);
