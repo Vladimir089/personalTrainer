@@ -6,6 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         //FirebaseApp.configure()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didTakeScreenshot), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
@@ -48,12 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let navController = window.rootViewController as? UINavigationController, let rootVC = navController.viewControllers.first as? ViewController {
             // Обновляем состояние контроллера
-            if isCapturing {
+            print(isCapturing)
+            if !isCapturing {
                 let reviewerViewController = ReviewerViewController()
                 navController.setViewControllers([reviewerViewController], animated: true)
+                print(1)
             } else {
                 let userLoadingViewController = UserLoadingViewController()
                 navController.setViewControllers([userLoadingViewController], animated: true)
+                print(2)
             }
         }
     }
