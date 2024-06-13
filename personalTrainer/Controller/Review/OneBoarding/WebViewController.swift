@@ -12,6 +12,8 @@ import SnapKit
 class WebViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
+    
+    var isCaptured = false
 
     override func viewDidLoad() {
         super.viewDidLoad()

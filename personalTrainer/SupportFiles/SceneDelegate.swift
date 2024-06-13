@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func checkUser(completion: @escaping (Result<Bool, Error>) -> Void) {
-        // Ваша логика проверки пользователя/ревьюера
         
         // Пример успешного результата
         completion(.success(true))
