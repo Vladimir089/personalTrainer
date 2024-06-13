@@ -91,19 +91,9 @@ class ThreeViewController: UIViewController {
     }
     
     @objc func rateApp() {
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
-            // Планируем выполнение postRatingAction через 2 секунды как пример
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.performPostRatingAction()
-            }
-        } else {
-            // Фоллбек для более старых версий iOS
-            if let url = URL(string: "itms-apps://itunes.apple.com/app/IDПРИЛОЖЕНИЯ") {
-                UIApplication.shared.open(url, options: [:], completionHandler: { success in
-                    self.performPostRatingAction()
-                })
-            }
+        SKStoreReviewController.requestReview()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.performPostRatingAction()
         }
     }
 

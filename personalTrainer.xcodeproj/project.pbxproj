@@ -57,6 +57,13 @@
 		1595904F2C19ABFD000D78C6 /* EditAndNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595904E2C19ABFD000D78C6 /* EditAndNewEventViewController.swift */; };
 		159590512C19AD83000D78C6 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590502C19AD83000D78C6 /* CalendarModel.swift */; };
 		159590532C19D5AA000D78C6 /* DetailCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590522C19D5AA000D78C6 /* DetailCalendarViewController.swift */; };
+		159590562C1B1951000D78C6 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590552C1B1951000D78C6 /* RatingViewController.swift */; };
+		159590592C1B1AD2000D78C6 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590582C1B1AD2000D78C6 /* RatingView.swift */; };
+		1595905B2C1B1D93000D78C6 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595905A2C1B1D93000D78C6 /* RatingModel.swift */; };
+		1595905D2C1B1F7D000D78C6 /* NewRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595905C2C1B1F7D000D78C6 /* NewRatingViewController.swift */; };
+		1595905F2C1B2273000D78C6 /* CreateRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595905E2C1B2273000D78C6 /* CreateRatingViewController.swift */; };
+		159590622C1B445C000D78C6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590612C1B445C000D78C6 /* SettingsViewController.swift */; };
+		159590642C1B505F000D78C6 /* UsagePolicyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590632C1B505F000D78C6 /* UsagePolicyWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +103,13 @@
 		1595904E2C19ABFD000D78C6 /* EditAndNewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAndNewEventViewController.swift; sourceTree = "<group>"; };
 		159590502C19AD83000D78C6 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 		159590522C19D5AA000D78C6 /* DetailCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCalendarViewController.swift; sourceTree = "<group>"; };
+		159590552C1B1951000D78C6 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		159590582C1B1AD2000D78C6 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		1595905A2C1B1D93000D78C6 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
+		1595905C2C1B1F7D000D78C6 /* NewRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRatingViewController.swift; sourceTree = "<group>"; };
+		1595905E2C1B2273000D78C6 /* CreateRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRatingViewController.swift; sourceTree = "<group>"; };
+		159590612C1B445C000D78C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		159590632C1B505F000D78C6 /* UsagePolicyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsagePolicyWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +174,7 @@
 				15864E2B2C14CFC2009F9BBC /* PlayerModel.swift */,
 				159590382C186420000D78C6 /* TrainingModel.swift */,
 				159590502C19AD83000D78C6 /* CalendarModel.swift */,
+				1595905A2C1B1D93000D78C6 /* RatingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +283,8 @@
 		15864E202C148A4D009F9BBC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				159590602C1B4448000D78C6 /* SettingsPage */,
+				159590542C1B193F000D78C6 /* RatingPage */,
 				159590482C19A724000D78C6 /* CalendarPage */,
 				159590322C185F66000D78C6 /* TrainingPage */,
 				15864E262C14A6D2009F9BBC /* AthletePage */,
@@ -279,6 +296,7 @@
 		15864E232C149546009F9BBC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				159590572C1B1AAC000D78C6 /* RatingPage */,
 				1595904B2C19A746000D78C6 /* CalendarPage */,
 				159590352C1862D8000D78C6 /* TrainingPage */,
 				15864E2F2C14DFF0009F9BBC /* AthletePage */,
@@ -341,6 +359,33 @@
 				1595904C2C19A75D000D78C6 /* CalendarView.swift */,
 			);
 			path = CalendarPage;
+			sourceTree = "<group>";
+		};
+		159590542C1B193F000D78C6 /* RatingPage */ = {
+			isa = PBXGroup;
+			children = (
+				159590552C1B1951000D78C6 /* RatingViewController.swift */,
+				1595905C2C1B1F7D000D78C6 /* NewRatingViewController.swift */,
+				1595905E2C1B2273000D78C6 /* CreateRatingViewController.swift */,
+			);
+			path = RatingPage;
+			sourceTree = "<group>";
+		};
+		159590572C1B1AAC000D78C6 /* RatingPage */ = {
+			isa = PBXGroup;
+			children = (
+				159590582C1B1AD2000D78C6 /* RatingView.swift */,
+			);
+			path = RatingPage;
+			sourceTree = "<group>";
+		};
+		159590602C1B4448000D78C6 /* SettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				159590612C1B445C000D78C6 /* SettingsViewController.swift */,
+				159590632C1B505F000D78C6 /* UsagePolicyWebView.swift */,
+			);
+			path = SettingsPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,11 +485,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159590592C1B1AD2000D78C6 /* RatingView.swift in Sources */,
 				152E006F2C1313DC001DD14E /* ViewController.swift in Sources */,
 				159590512C19AD83000D78C6 /* CalendarModel.swift in Sources */,
 				1595903D2C189310000D78C6 /* DetailTrainingViewController.swift in Sources */,
 				15864E312C14E005009F9BBC /* NewAthleteView.swift in Sources */,
 				159590432C18DB29000D78C6 /* ThreeViewController.swift in Sources */,
+				1595905B2C1B1D93000D78C6 /* RatingModel.swift in Sources */,
 				152E006B2C1313DC001DD14E /* AppDelegate.swift in Sources */,
 				1595904F2C19ABFD000D78C6 /* EditAndNewEventViewController.swift in Sources */,
 				159590392C186420000D78C6 /* TrainingModel.swift in Sources */,
@@ -463,9 +510,14 @@
 				15864E2C2C14CFC2009F9BBC /* PlayerModel.swift in Sources */,
 				15864E1F2C148A42009F9BBC /* AthleteViewController.swift in Sources */,
 				15864E372C174648009F9BBC /* EditPlayerViewController.swift in Sources */,
+				159590622C1B445C000D78C6 /* SettingsViewController.swift in Sources */,
 				159590342C18608F000D78C6 /* TrainingViewController.swift in Sources */,
+				159590642C1B505F000D78C6 /* UsagePolicyWebView.swift in Sources */,
+				1595905F2C1B2273000D78C6 /* CreateRatingViewController.swift in Sources */,
 				159590532C19D5AA000D78C6 /* DetailCalendarViewController.swift in Sources */,
+				159590562C1B1951000D78C6 /* RatingViewController.swift in Sources */,
 				1595904D2C19A75D000D78C6 /* CalendarView.swift in Sources */,
+				1595905D2C1B1F7D000D78C6 /* NewRatingViewController.swift in Sources */,
 				152E006D2C1313DC001DD14E /* SceneDelegate.swift in Sources */,
 				15864E1D2C13467B009F9BBC /* HelloView.swift in Sources */,
 				1595904A2C19A73C000D78C6 /* CalendarViewController.swift in Sources */,
