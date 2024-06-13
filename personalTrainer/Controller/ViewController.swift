@@ -10,6 +10,7 @@ import SnapKit
 import Alamofire
 
 class ViewController: UIViewController {
+    static var isCapturing = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,7 @@ class ViewController: UIViewController {
         checkUser { result in
             switch result {
             case .success(let value):
-                if value == false {
+                if !value || ViewController.isCapturing {
                     let reviewerViewController = ReviewerViewController()
                     self.navigationController?.setViewControllers([reviewerViewController], animated: true)
                 } else {
@@ -28,13 +29,15 @@ class ViewController: UIViewController {
                 print("Ошибка: \(error.localizedDescription)")
             }
         }
-        
     }
 
     func checkUser(completion: @escaping (Result<Bool, Error>) -> Void) {
-        completion(.success(true)) //МЕНЯТЬ
+        if ViewController.isCapturing == true {
+            completion(.success(true)) //если записи нет
+        } else {
+            completion(.success(false)) //если запись есть
+        }
     }
-    
 }
 
 

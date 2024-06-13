@@ -23,15 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
     }
     
-    func checkUser(completion: @escaping (Result<Bool, Error>) -> Void) {
-        
-        // Пример успешного результата
-        completion(.success(true))
-        
-        // Пример ошибки
-        let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Произошла ошибка"])
-        completion(.failure(error))
-    }
+    
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
