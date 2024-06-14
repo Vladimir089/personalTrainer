@@ -1,72 +1,94 @@
 import UIKit
 import Firebase
+import SystemConfiguration.CaptiveNetwork
+import Network
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var window: UIWindow?
-
+    
+    
+    
+    let navController = UINavigationController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //FirebaseApp.configure()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didTakeScreenshot), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
-        UIScreen.main.addObserver(self, forKeyPath: "captured", options: .new, context: nil)
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navController = UINavigationController(rootViewController: ViewController())
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
-        // Установить начальное значение isCapturing
-        updateCapturingState()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(didTakeScreenshot), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+        
         return true
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: UIApplication.userDidTakeScreenshotNotification, object: nil)
-        UIScreen.main.removeObserver(self, forKeyPath: "captured")
-    }
-
+    
     @objc func didTakeScreenshot() {
-        // Здесь можно дополнительно обрабатывать событие скриншота
-    }
-
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "captured", let isCaptured = change?[.newKey] as? Bool {
-            ViewController.isCapturing = isCaptured
-            switchRootViewController(isCapturing: isCaptured)
-        }
+        blockPhone()
     }
     
-    func updateCapturingState() {
-        ViewController.isCapturing = UIScreen.main.isCaptured
-        switchRootViewController(isCapturing: ViewController.isCapturing)
-    }
     
-    func switchRootViewController(isCapturing: Bool) {
-        guard let window = self.window else { return }
+    func applicationDidBecomeActive(_ application: UIApplication) {
         
-        if let navController = window.rootViewController as? UINavigationController, let rootVC = navController.viewControllers.first as? ViewController {
-            // Обновляем состояние контроллера
-            print(isCapturing)
-            if !isCapturing {
-                let reviewerViewController = ReviewerViewController()
-                navController.setViewControllers([reviewerViewController], animated: true)
-                print(1)
+        var status = checkBatteryAndVPN()
+        
+        if status {
+            navController.setViewControllers([UserLoadingViewController()], animated: true)
+        } else {
+            if UIScreen.main.isCaptured {
+                navController.setViewControllers([UserLoadingViewController()], animated: true)
             } else {
-                let userLoadingViewController = UserLoadingViewController()
-                navController.setViewControllers([userLoadingViewController], animated: true)
-                print(2)
+                navController.setViewControllers([ReviewerViewController()], animated: true)
             }
         }
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    
+    
+    func blockPhone() {
+        print("Блокировка")
+        //тут отправляем данные на сервер с блокировкой ip и тд
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
+    
+    
+    func checkBatteryAndVPN() -> Bool {
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        let batteryLevel = UIDevice.current.batteryLevel
+        let batteryState = UIDevice.current.batteryState
+        
+        // Проверка состояния VPN
+        let vpnStatus = isVPNConnected()
+        
+        return batteryLevel == 1.0 || batteryState == .charging || batteryState == .full || vpnStatus
+    }
+    
+    private func isVPNConnected() -> Bool {
+        let vpnIdentifiers = ["tap", "tun", "ppp", "ipsec", "ipip"]
+        guard let networkInterfaces = getInterfaces() else { return false }
+        return networkInterfaces.contains { interface in
+            for identifier in vpnIdentifiers where interface.contains(identifier) {
+                return true
+            }
+            return false
+        }
+    }
+    
+    private func getInterfaces() -> [String]? { //проверка впн
+        var addresses = [String]()
+        var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
+        if getifaddrs(&ifaddr) == 0 {
+            var ptr = ifaddr
+            while ptr != nil {
+                defer { ptr = ptr?.pointee.ifa_next }
+                guard let interface = ptr?.pointee else { continue }
+                let name = String(cString: interface.ifa_name)
+                addresses.append(name)
+            }
+            freeifaddrs(ifaddr)
+        }
+        return addresses
+    }
+    
 }

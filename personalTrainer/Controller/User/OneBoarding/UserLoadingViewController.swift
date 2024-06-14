@@ -11,6 +11,10 @@ import UIKit
 class UserLoadingViewController: UIViewController {
     
     var mainView: LoadUserOneBoardingView?
+    
+    var isCapturing: Bool?
+    
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +22,8 @@ class UserLoadingViewController: UIViewController {
         self.view = mainView
         fullLabel()
     }
+    
+    
     
     func fullLabel() {
         var progress: Float = 0
@@ -32,7 +38,12 @@ class UserLoadingViewController: UIViewController {
             
             if progress >= totalProgress {
                 timer.invalidate()
-                self.navigationController?.setViewControllers([HelloViewController()], animated: true)
+                
+                if UserDefaults.standard.object(forKey: "User") != nil {
+                    self.navigationController?.setViewControllers([TabBarViewController()], animated: true)
+                } else {
+                    self.navigationController?.setViewControllers([HelloViewController()], animated: true)
+                }
             }
         }
     }

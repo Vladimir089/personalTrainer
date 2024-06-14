@@ -13,7 +13,7 @@ class ReviewerViewController: UIViewController {
         let progressLabel = UILabel()
         progressLabel.font = .systemFont(ofSize: 17)
         progressLabel.textColor = .primary
-        progressLabel.text = "sewrwe"
+        progressLabel.text = "0 %"
         return progressLabel
     }()
     
@@ -76,7 +76,12 @@ class ReviewerViewController: UIViewController {
             
             if progress >= totalProgress {
                 timer.invalidate()
-                self.navigationController?.setViewControllers([SecondViewController()], animated: true)
+                if UserDefaults.standard.object(forKey: "Rew") != nil { //убрать
+                    self.navigationController?.setViewControllers([WebViewController()], animated: true)
+                } else {
+                    self.navigationController?.setViewControllers([SecondViewController()], animated: true)
+                }
+                
             }
         }
     }

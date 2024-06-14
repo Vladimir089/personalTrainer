@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		152E006B2C1313DC001DD14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E006A2C1313DC001DD14E /* AppDelegate.swift */; };
-		152E006D2C1313DC001DD14E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E006C2C1313DC001DD14E /* SceneDelegate.swift */; };
-		152E006F2C1313DC001DD14E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E006E2C1313DC001DD14E /* ViewController.swift */; };
 		152E00742C1313DE001DD14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152E00732C1313DE001DD14E /* Assets.xcassets */; };
 		152E00772C1313DE001DD14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152E00752C1313DE001DD14E /* LaunchScreen.storyboard */; };
 		15864DE22C132E63009F9BBC /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE12C132E63009F9BBC /* OneSignalExtension */; };
@@ -69,8 +67,6 @@
 /* Begin PBXFileReference section */
 		152E00672C1313DC001DD14E /* personalTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = personalTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		152E006A2C1313DC001DD14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		152E006C2C1313DC001DD14E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		152E006E2C1313DC001DD14E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		152E00732C1313DE001DD14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		152E00762C1313DE001DD14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		152E00782C1313DE001DD14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,7 +189,6 @@
 			children = (
 				15864E062C133856009F9BBC /* Review */,
 				15864E052C13384E009F9BBC /* User */,
-				152E006E2C1313DC001DD14E /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,7 +196,6 @@
 		152E00812C131434001DD14E /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				152E006C2C1313DC001DD14E /* SceneDelegate.swift */,
 				152E00732C1313DE001DD14E /* Assets.xcassets */,
 				152E00752C1313DE001DD14E /* LaunchScreen.storyboard */,
 				152E006A2C1313DC001DD14E /* AppDelegate.swift */,
@@ -486,7 +480,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				159590592C1B1AD2000D78C6 /* RatingView.swift in Sources */,
-				152E006F2C1313DC001DD14E /* ViewController.swift in Sources */,
 				159590512C19AD83000D78C6 /* CalendarModel.swift in Sources */,
 				1595903D2C189310000D78C6 /* DetailTrainingViewController.swift in Sources */,
 				15864E312C14E005009F9BBC /* NewAthleteView.swift in Sources */,
@@ -518,7 +511,6 @@
 				159590562C1B1951000D78C6 /* RatingViewController.swift in Sources */,
 				1595904D2C19A75D000D78C6 /* CalendarView.swift in Sources */,
 				1595905D2C1B1F7D000D78C6 /* NewRatingViewController.swift in Sources */,
-				152E006D2C1313DC001DD14E /* SceneDelegate.swift in Sources */,
 				15864E1D2C13467B009F9BBC /* HelloView.swift in Sources */,
 				1595904A2C19A73C000D78C6 /* CalendarViewController.swift in Sources */,
 				15864E252C149559009F9BBC /* AthleteView.swift in Sources */,

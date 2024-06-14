@@ -13,11 +13,13 @@ class WebViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
     
-    var isCaptured = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        UserDefaults.standard.set(true, forKey: "Rew")
+        
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
         webView.navigationDelegate = self

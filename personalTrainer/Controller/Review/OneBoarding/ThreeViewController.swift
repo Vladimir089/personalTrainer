@@ -10,6 +10,7 @@ import StoreKit
 
 class ThreeViewController: UIViewController {
     
+    var tap = 0
     let loadImage: UIImageView = {
         let image = UIImage(named: "threeImage")
         let imageView = UIImageView(image: image)
@@ -91,17 +92,22 @@ class ThreeViewController: UIViewController {
     }
     
     @objc func rateApp() {
-        SKStoreReviewController.requestReview()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.performPostRatingAction()
+        tap += 1
+        if tap == 1 {
+            SKStoreReviewController.requestReview()
         }
+        if tap == 2 {
+            self.navigationController?.setViewControllers([NotifyViewController()], animated: true)
+        }
+
     }
 
     
-    func performPostRatingAction() {
-        self.navigationController?.setViewControllers([NotifyViewController()], animated: true)
-    }
+    
 
     
 
 }
+
+
+

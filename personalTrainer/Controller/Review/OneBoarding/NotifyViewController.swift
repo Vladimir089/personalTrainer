@@ -10,6 +10,11 @@ import UserNotifications
 
 class NotifyViewController: UIViewController {
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     let loadImage: UIImageView = {
         let image = UIImage(named: "notiImage")
         let imageView = UIImageView(image: image)
@@ -71,6 +76,28 @@ class NotifyViewController: UIViewController {
             make.bottom.equalToSuperview().inset(40)
         }
         
+        let buttonClose: UIButton = {
+            let button = UIButton(type: .system)
+            button.backgroundColor = .primary
+            let image = UIImage(systemName: "xmark")?.resize(to: CGSize(width: 15, height: 15))
+            button.setImage(image, for: .normal)
+            button.tintColor = UIColor(red: 235/255, green: 235/255, blue: 245/255, alpha: 0.6)
+            button.layer.cornerRadius = 17.5
+            return button
+        }()
+        buttonClose.addTarget(self, action: #selector(skip), for: .touchUpInside)
+        view.addSubview(buttonClose)
+        buttonClose.snp.makeConstraints { make in
+            make.height.width.equalTo(35)
+            make.right.equalToSuperview().inset(15)
+            make.top.equalToSuperview().inset(60)
+        }
+        
+    }
+    
+    @objc func skip() {
+        print(1)
+        openWebView()
     }
     
     

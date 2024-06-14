@@ -11,6 +11,8 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaults.standard.set(true, forKey: "User")
 
         let athleteVC = AthleteViewController()
         let trainingVC = TrainingViewController()
