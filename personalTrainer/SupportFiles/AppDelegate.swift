@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let status = checkBatteryAndVPN()
         
-        if !status {
+        if status {
             if !isTabShow {
                 navController.setViewControllers([UserLoadingViewController()], animated: false)
             } else {
