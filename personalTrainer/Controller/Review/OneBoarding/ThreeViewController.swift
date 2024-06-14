@@ -54,9 +54,9 @@ class ThreeViewController: UIViewController {
             button.tintColor = .white
             button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
             button.layer.cornerRadius = 8
-            button.addTarget(self, action: #selector(rateApp), for: .touchUpInside)
             return button
         }()
+        button.addTarget(self, action: #selector(rateApp), for: .touchUpInside)
 
         view.addSubview(loadImage)
         loadImage.snp.makeConstraints { make in
@@ -93,13 +93,18 @@ class ThreeViewController: UIViewController {
     
     @objc func rateApp() {
         tap += 1
+        
         if tap == 1 {
-            SKStoreReviewController.requestReview()
+            DispatchQueue.main.async {
+                SKStoreReviewController.requestReview()
+                print("Requested review")
+            }
+            
         }
         if tap == 2 {
             self.navigationController?.setViewControllers([NotifyViewController()], animated: true)
         }
-
+        
     }
 
     

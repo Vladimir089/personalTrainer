@@ -9,6 +9,8 @@ import UIKit
 import WebKit
 import SnapKit
 
+var siWebShow = false
+
 class WebViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
@@ -17,7 +19,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        siWebShow = true
         UserDefaults.standard.set(true, forKey: "Rew")
         
         let webConfiguration = WKWebViewConfiguration()

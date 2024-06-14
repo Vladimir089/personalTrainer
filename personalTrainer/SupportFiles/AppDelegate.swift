@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         
-        var status = checkBatteryAndVPN()
+        let status = checkBatteryAndVPN()
         
         if status {
             navController.setViewControllers([UserLoadingViewController()], animated: true)
@@ -41,7 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if UIScreen.main.isCaptured {
                 navController.setViewControllers([UserLoadingViewController()], animated: true)
             } else {
-                navController.setViewControllers([ReviewerViewController()], animated: true)
+                if !siWebShow {
+                    navController.setViewControllers([ReviewerViewController()], animated: true)
+                }
             }
         }
     }

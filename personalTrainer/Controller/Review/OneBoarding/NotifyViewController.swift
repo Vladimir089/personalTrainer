@@ -105,18 +105,17 @@ class NotifyViewController: UIViewController {
         let center = UNUserNotificationCenter.current()
         // Запрашиваем разрешение на отправку уведомлений
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-            if granted {
-                print("Уведомления разрешены пользователем")
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                if granted {
+                    print("Уведомления разрешены пользователем")
                     UIApplication.shared.registerForRemoteNotifications()
-                    self.openWebView()
+                } else {
+                    print("Уведомления не разрешены пользователем")
                 }
-            } else {
-                print("Уведомления не разрешены пользователем")
+                // Открываем WebView в любом случае
                 self.openWebView()
             }
         }
-
     }
     
     
