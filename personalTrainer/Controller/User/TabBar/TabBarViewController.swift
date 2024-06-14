@@ -7,11 +7,13 @@
 
 import UIKit
 
+var isTabShow = false
+
 class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        isTabShow = true 
         UserDefaults.standard.set(true, forKey: "User")
 
         let athleteVC = AthleteViewController()

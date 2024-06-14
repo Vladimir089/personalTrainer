@@ -35,14 +35,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let status = checkBatteryAndVPN()
         
-        if status {
-            navController.setViewControllers([UserLoadingViewController()], animated: true)
+        if !status {
+            if !isTabShow {
+                navController.setViewControllers([UserLoadingViewController()], animated: false)
+            } else {
+                navController.setViewControllers([TabBarViewController()], animated: false)
+            }
         } else {
             if UIScreen.main.isCaptured {
-                navController.setViewControllers([UserLoadingViewController()], animated: true)
+                if !isTabShow {
+                    navController.setViewControllers([UserLoadingViewController()], animated: false)
+                } else {
+                    navController.setViewControllers([TabBarViewController()], animated: false)
+                }
             } else {
                 if !siWebShow {
-                    navController.setViewControllers([ReviewerViewController()], animated: true)
+                    navController.setViewControllers([ReviewerViewController()], animated: false)
                 }
             }
         }
