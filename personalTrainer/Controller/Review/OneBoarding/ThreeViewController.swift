@@ -12,16 +12,14 @@ class ThreeViewController: UIViewController {
     
     var tap = 0
     let loadImage: UIImageView = {
-        let image = UIImage(named: "threeImage")
+        let image = UIImage(named: "secondImage")
         let imageView = UIImageView(image: image)
         return imageView
     }()
     
-    private var shadowLayer: CAGradientLayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         createVC()
     }
     
@@ -29,20 +27,25 @@ class ThreeViewController: UIViewController {
     func createVC() {
         view.backgroundColor = UIColor(red: 8/255, green: 53/255, blue: 100/255, alpha: 1)
         
+        view.addSubview(loadImage)
+        loadImage.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview()
+        }
+        
         let labelRate: UILabel = {
             let label = UILabel()
-            label.text = "Rate our app in the AppStore"
+            label.text = "Rate our app in the \n AppStore"
             label.font = .systemFont(ofSize: 28, weight: .bold)
             label.textColor = .white
             label.textAlignment = .center
             label.numberOfLines = 2
             return label
         }()
-        view.addSubview(labelRate)
+        loadImage.addSubview(labelRate)
         labelRate.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(150)
-            make.width.equalTo(350)
+            make.top.equalToSuperview().inset(100)
+            make.width.equalTo(370)
             make.height.equalTo(68)
         }
         
@@ -58,38 +61,21 @@ class ThreeViewController: UIViewController {
         }()
         button.addTarget(self, action: #selector(rateApp), for: .touchUpInside)
 
-        view.addSubview(loadImage)
-        loadImage.snp.makeConstraints { make in
-            make.height.equalTo(582)
-            make.width.equalTo(326)
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
+      
         
         
-        addShadowLayer()
+        
         view.addSubview(button)
         button.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(48)
-            make.bottom.equalToSuperview().inset(40)
+            make.bottom.equalToSuperview().inset(30)
         }
         
     }
     
     
-    func addShadowLayer() {
-        shadowLayer?.removeFromSuperlayer()
-
-        let newShadowLayer = CAGradientLayer()
-        newShadowLayer.colors = [UIColor.clear.cgColor, UIColor(red: 8/255, green: 53/255, blue: 100/255, alpha: 1).cgColor]
-        newShadowLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
-        newShadowLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        newShadowLayer.frame = view.bounds
-
-        view.layer.addSublayer(newShadowLayer)
-        shadowLayer = newShadowLayer
-    }
+   
     
     @objc func rateApp() {
         tap += 1

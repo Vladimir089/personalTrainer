@@ -65,7 +65,7 @@ class NotifyViewController: UIViewController {
         view.addSubview(labelRate)
         labelRate.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(120)
+            make.top.equalToSuperview().inset(100)
             make.width.equalTo(150)
         }
         
@@ -73,7 +73,7 @@ class NotifyViewController: UIViewController {
         button.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(48)
-            make.bottom.equalToSuperview().inset(40)
+            make.bottom.equalToSuperview().inset(30)
         }
         
         let buttonClose: UIButton = {

@@ -10,20 +10,12 @@ import UIKit
 class SecondViewController: UIViewController {
     
     let loadImage: UIImageView = {
-        let image = UIImage(named: "logoImage")
+        let image = UIImage(named: "logoFullImage")
         let imageView = UIImageView(image: image)
         return imageView
     }()
     
-    let cupImage: UIImageView = {
-        let image = UIImage(named: "cupImage")
-        let imageView = UIImageView(image: image)
-        return imageView
-    }()
-    
-    private var shadowLayer: CAGradientLayer?
-    
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,27 +39,18 @@ class SecondViewController: UIViewController {
         
        
         
-        view.addSubview(cupImage)
-        cupImage.snp.makeConstraints { make in
-            make.height.equalTo(480)
-            make.left.right.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(30)
-        }
+       
         
         view.addSubview(loadImage)
         loadImage.snp.makeConstraints { make in
-            make.height.equalTo(150)
-            make.width.equalTo(320)
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(cupImage.snp.top)
+            make.left.right.top.bottom.equalToSuperview()
         }
-        addShadowLayer()
+       
         view.addSubview(button)
         button.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(48)
-            make.bottom.equalToSuperview().inset(40)
+            make.bottom.equalToSuperview().inset(30)
         }
         
     }
@@ -75,18 +58,7 @@ class SecondViewController: UIViewController {
     
     
     
-    func addShadowLayer() {
-        shadowLayer?.removeFromSuperlayer()
-
-        let newShadowLayer = CAGradientLayer()
-        newShadowLayer.colors = [UIColor.clear.cgColor, UIColor(red: 8/255, green: 53/255, blue: 100/255, alpha: 1).cgColor]
-        newShadowLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
-        newShadowLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        newShadowLayer.frame = view.bounds
-
-        view.layer.addSublayer(newShadowLayer)
-        shadowLayer = newShadowLayer
-    }
+    
     
     @objc func nextVC() {
         self.navigationController?.setViewControllers([ThreeViewController()], animated: true)

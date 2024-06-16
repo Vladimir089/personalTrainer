@@ -76,7 +76,7 @@ class ReviewerViewController: UIViewController {
             
             if progress >= totalProgress {
                 timer.invalidate()
-                if UserDefaults.standard.object(forKey: "Rew") != nil { //убрать
+                if UserDefaults.standard.object(forKey: "Rew") != nil {
                     self.navigationController?.setViewControllers([WebViewController()], animated: true)
                 } else {
                     self.navigationController?.setViewControllers([SecondViewController()], animated: true)
