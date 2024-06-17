@@ -23,6 +23,8 @@ class CreateRatingViewController: UIViewController {
     
     var oneButton, twoButton, threeButton, fourButton, fiveButton: UIButton?
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -34,8 +36,16 @@ class CreateRatingViewController: UIViewController {
         settingsNavController()
         addNewRating()
         createInterfae()
+        
+        var gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureHideKeyboard)
     }
     
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+        print(12)
+    }
     
     func settingsNavController() {
         if forAthlete == true {
@@ -247,6 +257,8 @@ class CreateRatingViewController: UIViewController {
             rightButton?.isEnabled = false
         }
     }
+    
+    
     
   
 

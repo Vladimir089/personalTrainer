@@ -45,6 +45,13 @@ class EditPlayerViewController: UIViewController {
         createInterface()
         settingsNavController()
         achivements = athlete?.achivements ?? nil
+        var gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureHideKeyboard)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+        print(12)
     }
     
     

@@ -91,6 +91,14 @@ class EditStatisticViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createInterface()
+        var gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureHideKeyboard)
+    }
+    
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+        print(12)
     }
     
 
@@ -171,6 +179,7 @@ class EditStatisticViewController: UIViewController {
         totalLabel.text = "$\(totalTextField.text ?? "$0")"
         UserDefaults.standard.set(amountTextField.text, forKey: "amount")
         UserDefaults.standard.set(totalTextField.text, forKey: "total")
+        self.dismiss(animated: true)
     }
     
 }

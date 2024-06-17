@@ -31,12 +31,15 @@ class TrainingView: UIView {
         super .init(frame: frame)
         settingsView()
         backgroundColor = .BG
+        checkArray()
     }
     
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     
     func settingsView() {

@@ -62,13 +62,15 @@ class EditAndNewEventViewController: UIViewController {
         if isNew == false {
             editDelegate?.dein()
         }
+        print(32)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsNavController()
          
-
+        var gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureHideKeyboard)
         view.backgroundColor = .BG
         creaeInterface()
         if isNew == true {
@@ -78,6 +80,15 @@ class EditAndNewEventViewController: UIViewController {
             title = "Edit"
             editTraining()
         }
+    }
+    
+   
+
+
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+        print(12)
     }
     
 
@@ -274,7 +285,13 @@ class EditAndNewEventViewController: UIViewController {
         
     }
     
+    deinit {
+        print(1213)
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        print(2312)
+    }
     
     
     @objc func showPlayersWindow() {
@@ -304,6 +321,7 @@ class EditAndNewEventViewController: UIViewController {
             players.append(player)
         }
         updateAthleteTextField()
+        hideKeyboard()
     }
     
     
@@ -341,12 +359,18 @@ extension EditAndNewEventViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+ 
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == athleteTextField {
             showPlayersWindow()
             textField.resignFirstResponder()
+            hideKeyboard()
+            return false
         }
+        return true
     }
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         defer {

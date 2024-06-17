@@ -31,6 +31,14 @@ class AddNewPlayerViewController: UIViewController {
         mainView?.delegate = self
         self.title = "New athlete"
         settingsNavController()
+        var gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        mainView?.addGestureRecognizer(gestureHideKeyboard)
+    }
+    
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+        print(12)
     }
     
     

@@ -150,6 +150,7 @@ extension AthleteViewController: AthleteViewControllerDelegate {
         self.athleteArr = athleteArr
         mainView?.athleteArr = athleteArr
         self.mainView?.checkArray()
+        playersArr = self.athleteArr
     }
     
     
@@ -159,6 +160,7 @@ extension AthleteViewController: AthleteViewControllerDelegate {
         vc.delegate = self
         navigationController?.topViewController?.navigationItem.title = " "
         navigationController?.pushViewController(vc, animated: true)
+        playersArr = self.athleteArr
     }
 
     
@@ -166,6 +168,7 @@ extension AthleteViewController: AthleteViewControllerDelegate {
     func showEditView(amountLabel: UILabel, totalLabel: UILabel) {
         let vc = EditStatisticViewController(amountLabel: amountLabel, totalLabel: totalLabel)
         self.present(vc, animated: true)
+        playersArr = self.athleteArr
     }
     
     

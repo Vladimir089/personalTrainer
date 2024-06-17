@@ -56,6 +56,7 @@ class NewTrainingViewController: UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
         editDelegate?.changeTitle()
+    
     }
     
     
@@ -102,8 +103,14 @@ class NewTrainingViewController: UIViewController {
             title = training?.name
             editTraining()
         }
-        
+        var gestureHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureHideKeyboard)
         createInterface()
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+        print(12)
     }
     
     
@@ -144,6 +151,8 @@ class NewTrainingViewController: UIViewController {
     }
     
     
+    
+    
     func addNewTraining() {
         let rightButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addButtonTapped))
         rightButton.isEnabled = false
@@ -152,7 +161,7 @@ class NewTrainingViewController: UIViewController {
         
         let extraButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(extraButtonTapped))
         
-        let playersButton = UIBarButtonItem(title: "0", style: .plain, target: self, action: #selector(showPlayersWindow))
+        let playersButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(showPlayersWindow))
 
         navigationItem.rightBarButtonItems = [rightButton, extraButton, playersButton]
     }
@@ -165,7 +174,7 @@ class NewTrainingViewController: UIViewController {
         let image = UIImage.plus.resize(to: CGSize(width: 20, height: 20))
         let extraButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(extraButtonTapped))
         
-        let playersButton = UIBarButtonItem(title: "0", style: .plain, target: self, action: #selector(showPlayersWindow))
+        let playersButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(showPlayersWindow))
         
         navigationItem.rightBarButtonItems = [rightButton, extraButton, playersButton]
         

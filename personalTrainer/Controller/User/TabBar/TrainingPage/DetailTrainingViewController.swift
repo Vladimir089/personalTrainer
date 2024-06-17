@@ -446,6 +446,7 @@ extension DetailTrainingViewController: UICollectionViewDelegate, UICollectionVi
 extension DetailTrainingViewController: DetailTrainingViewControllerDelegate {
     func changeTitle() {
         title = training?.name
+
     }
     
    
