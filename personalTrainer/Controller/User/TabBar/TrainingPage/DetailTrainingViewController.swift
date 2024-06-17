@@ -459,7 +459,6 @@ extension DetailTrainingViewController: DetailTrainingViewControllerDelegate {
         
         UIView.animate(withDuration: 0.5) { [self] in
             imageView?.image = UIImage(data: training.imageData ?? Data())
-            playersArr = training.players ?? [Player]()
             repetitionsLabel?.text = training.repetitions 
             approachesLabel?.text = training.approaches
             collectionView?.reloadData()
