@@ -37,7 +37,7 @@ class DetailTrainingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print(1)
         // Восстанавливаем заголовок
         title = training?.name
         
@@ -60,7 +60,13 @@ class DetailTrainingViewController: UIViewController {
         vc.training = training
         vc.editDelegate = self
         vc.isNew = false
-        navigationController?.topViewController?.navigationItem.title = ""
+        
+        
+        // Задаем пустой текст для кнопки "Назад"
+        let backItem = UIBarButtonItem()
+        backItem.title = " "
+        navigationItem.backBarButtonItem = backItem
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     

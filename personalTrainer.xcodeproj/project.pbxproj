@@ -45,11 +45,6 @@
 		159590392C186420000D78C6 /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590382C186420000D78C6 /* TrainingModel.swift */; };
 		1595903B2C186B18000D78C6 /* NewTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595903A2C186B18000D78C6 /* NewTrainingViewController.swift */; };
 		1595903D2C189310000D78C6 /* DetailTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595903C2C189310000D78C6 /* DetailTrainingViewController.swift */; };
-		1595903F2C18D1CC000D78C6 /* ReviewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595903E2C18D1CC000D78C6 /* ReviewerViewController.swift */; };
-		159590412C18D659000D78C6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590402C18D659000D78C6 /* SecondViewController.swift */; };
-		159590432C18DB29000D78C6 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590422C18DB29000D78C6 /* ThreeViewController.swift */; };
-		159590452C18DEDA000D78C6 /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590442C18DEDA000D78C6 /* NotifyViewController.swift */; };
-		159590472C18E24C000D78C6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590462C18E24C000D78C6 /* WebViewController.swift */; };
 		1595904A2C19A73C000D78C6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159590492C19A73C000D78C6 /* CalendarViewController.swift */; };
 		1595904D2C19A75D000D78C6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595904C2C19A75D000D78C6 /* CalendarView.swift */; };
 		1595904F2C19ABFD000D78C6 /* EditAndNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595904E2C19ABFD000D78C6 /* EditAndNewEventViewController.swift */; };
@@ -89,11 +84,6 @@
 		159590382C186420000D78C6 /* TrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
 		1595903A2C186B18000D78C6 /* NewTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrainingViewController.swift; sourceTree = "<group>"; };
 		1595903C2C189310000D78C6 /* DetailTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTrainingViewController.swift; sourceTree = "<group>"; };
-		1595903E2C18D1CC000D78C6 /* ReviewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewerViewController.swift; sourceTree = "<group>"; };
-		159590402C18D659000D78C6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		159590422C18DB29000D78C6 /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
-		159590442C18DEDA000D78C6 /* NotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
-		159590462C18E24C000D78C6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		159590492C19A73C000D78C6 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		1595904C2C19A75D000D78C6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		1595904E2C19ABFD000D78C6 /* EditAndNewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAndNewEventViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				15864E0E2C1339D2009F9BBC /* User */,
-				15864E0D2C1339B3009F9BBC /* Review */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,7 +176,6 @@
 		152E00802C1313ED001DD14E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				15864E062C133856009F9BBC /* Review */,
 				15864E052C13384E009F9BBC /* User */,
 			);
 			path = Controller;
@@ -212,14 +200,6 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		15864E062C133856009F9BBC /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				15864E082C1338A5009F9BBC /* OneBoarding */,
-			);
-			path = Review;
-			sourceTree = "<group>";
-		};
 		15864E072C13389A009F9BBC /* OneBoarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,26 +207,6 @@
 				15864E182C13442D009F9BBC /* HelloViewController.swift */,
 			);
 			path = OneBoarding;
-			sourceTree = "<group>";
-		};
-		15864E082C1338A5009F9BBC /* OneBoarding */ = {
-			isa = PBXGroup;
-			children = (
-				1595903E2C18D1CC000D78C6 /* ReviewerViewController.swift */,
-				159590402C18D659000D78C6 /* SecondViewController.swift */,
-				159590422C18DB29000D78C6 /* ThreeViewController.swift */,
-				159590442C18DEDA000D78C6 /* NotifyViewController.swift */,
-				159590462C18E24C000D78C6 /* WebViewController.swift */,
-			);
-			path = OneBoarding;
-			sourceTree = "<group>";
-		};
-		15864E0D2C1339B3009F9BBC /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				15864E102C1339DF009F9BBC /* OneBoarding */,
-			);
-			path = Review;
 			sourceTree = "<group>";
 		};
 		15864E0E2C1339D2009F9BBC /* User */ = {
@@ -263,13 +223,6 @@
 			children = (
 				15864E112C133A27009F9BBC /* LoadUserOneBoardingView.swift */,
 				15864E1C2C13467B009F9BBC /* HelloView.swift */,
-			);
-			path = OneBoarding;
-			sourceTree = "<group>";
-		};
-		15864E102C1339DF009F9BBC /* OneBoarding */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = OneBoarding;
 			sourceTree = "<group>";
@@ -483,23 +436,18 @@
 				159590512C19AD83000D78C6 /* CalendarModel.swift in Sources */,
 				1595903D2C189310000D78C6 /* DetailTrainingViewController.swift in Sources */,
 				15864E312C14E005009F9BBC /* NewAthleteView.swift in Sources */,
-				159590432C18DB29000D78C6 /* ThreeViewController.swift in Sources */,
 				1595905B2C1B1D93000D78C6 /* RatingModel.swift in Sources */,
 				152E006B2C1313DC001DD14E /* AppDelegate.swift in Sources */,
 				1595904F2C19ABFD000D78C6 /* EditAndNewEventViewController.swift in Sources */,
 				159590392C186420000D78C6 /* TrainingModel.swift in Sources */,
 				15864E2E2C14DF1B009F9BBC /* AddNewPlayerViewController.swift in Sources */,
 				159590372C1862F0000D78C6 /* TrainingView.swift in Sources */,
-				1595903F2C18D1CC000D78C6 /* ReviewerViewController.swift in Sources */,
 				15864E2A2C14B64A009F9BBC /* EditStatisticViewController.swift in Sources */,
 				15864E352C172C8B009F9BBC /* DetailAthleteViewController.swift in Sources */,
-				159590472C18E24C000D78C6 /* WebViewController.swift in Sources */,
-				159590412C18D659000D78C6 /* SecondViewController.swift in Sources */,
 				15864E0C2C13392B009F9BBC /* UserLoadingViewController.swift in Sources */,
 				15864E192C13442D009F9BBC /* HelloViewController.swift in Sources */,
 				15864E222C148AD1009F9BBC /* TabBarViewController.swift in Sources */,
 				1595903B2C186B18000D78C6 /* NewTrainingViewController.swift in Sources */,
-				159590452C18DEDA000D78C6 /* NotifyViewController.swift in Sources */,
 				15864E2C2C14CFC2009F9BBC /* PlayerModel.swift in Sources */,
 				15864E1F2C148A42009F9BBC /* AthleteViewController.swift in Sources */,
 				15864E372C174648009F9BBC /* EditPlayerViewController.swift in Sources */,
@@ -661,6 +609,7 @@
 				DEVELOPMENT_TEAM = 6YA7577C98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = personalTrainer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SquadSage;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -694,6 +643,7 @@
 				DEVELOPMENT_TEAM = 6YA7577C98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = personalTrainer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SquadSage;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

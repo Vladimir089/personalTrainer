@@ -31,35 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        
-        let status = checkBatteryAndVPN()
-        
-        if status {
-            if !isTabShow {
-                navController.setViewControllers([UserLoadingViewController()], animated: false)
-            } else {
-                navController.setViewControllers([TabBarViewController()], animated: false)
-            }
+    func applicationDidBecomeActive(_ application: UIApplication) { //менять
+        if !isTabShow {
+            navController.setViewControllers([UserLoadingViewController()], animated: false)
         } else {
-            if UIScreen.main.isCaptured {
-                if !isTabShow {
-                    navController.setViewControllers([UserLoadingViewController()], animated: false)
-                } else {
-                    navController.setViewControllers([TabBarViewController()], animated: false)
-                }
-            } else {
-                if !siWebShow {
-                    navController.setViewControllers([ReviewerViewController()], animated: false)
-                }
-            }
+            navController.setViewControllers([TabBarViewController()], animated: false)
         }
     }
     
     
     func blockPhone() {
-        print("Блокировка")
-        //тут отправляем данные на сервер с блокировкой ip и тд
+        print("скрин")
     }
     
     

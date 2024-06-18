@@ -9,6 +9,7 @@ import UIKit
 
 protocol DetailAthleteViewControllerProtocol: AnyObject {
     func savePlayer(player: Player)
+    func saveTitle()
 }
 
 class DetailAthleteViewController: UIViewController {
@@ -35,9 +36,11 @@ class DetailAthleteViewController: UIViewController {
         self.title = "Athlete"
     }
     
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Athlete"
         settingsNavController()
         settingsView()
     }
@@ -61,8 +64,13 @@ class DetailAthleteViewController: UIViewController {
         let vc = EditPlayerViewController()
         vc.index = index
         vc.athlete = athlete
-        vc.delegate = self  
-        navigationController?.topViewController?.navigationItem.title = " "
+        vc.delegate = self
+        
+        // Задаем пустой текст для кнопки "Назад"
+        let backItem = UIBarButtonItem()
+        backItem.title = " "
+        navigationItem.backBarButtonItem = backItem
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -339,6 +347,12 @@ extension DetailAthleteViewController: UICollectionViewDelegate, UICollectionVie
 
 
 extension DetailAthleteViewController: DetailAthleteViewControllerProtocol {
+    
+    func saveTitle() {
+        self.title = "Athlete"
+        print(123)
+    }
+    
     
     func savePlayer(player: Player) {
         self.athlete = player

@@ -10,7 +10,7 @@ import UIKit
 class LoadUserOneBoardingView: UIView {
     
     let loadImage: UIImageView = {
-        let image = UIImage(named: "loadImage")
+        let image = UIImage(named: "log")
         let imageView = UIImageView(image: image)
         return imageView
     }()

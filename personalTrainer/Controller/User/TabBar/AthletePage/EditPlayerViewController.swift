@@ -38,7 +38,12 @@ class EditPlayerViewController: UIViewController {
     }()
     
     
-
+    override func viewDidDisappear(_ animated: Bool) {
+        delegate?.saveTitle()
+    }
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .BG
@@ -155,7 +160,6 @@ class EditPlayerViewController: UIViewController {
         print("First field: \(field1), Second field: \(field2)")
         let achivement = Achivement(mainText: field1, secondaryText: field2)
         achivements?.append(achivement)
-        
     }
     
     

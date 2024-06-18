@@ -56,7 +56,7 @@ class NewTrainingViewController: UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
         editDelegate?.changeTitle()
-    
+
     }
     
     
