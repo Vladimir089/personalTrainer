@@ -132,12 +132,20 @@ class NewTrainingViewController: UIViewController {
             if players.contains(where: { $0.name == player.name }) {
                 action.setValue(UIImage(systemName: "checkmark"), forKey: "image")
             }
-            alertController.addAction(action) 
+            alertController.addAction(action)
         }
-        
+            
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-        
+
+        // Настройка места отображения для iPad
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.barButtonItem = self.navigationItem.rightBarButtonItems?.last // или другой UIBarButtonItem, откуда должен появиться ActionSheet
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+            
         present(alertController, animated: true, completion: nil)
     }
     

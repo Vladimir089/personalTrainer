@@ -14,8 +14,8 @@
             filePath = "personalTrainer/Controller/User/TabBar/TrainingPage/NewTrainingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "editTraining()"
             landmarkType = "7">
          </BreakpointContent>

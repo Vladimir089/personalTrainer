@@ -298,6 +298,7 @@ class EditAndNewEventViewController: UIViewController {
         let alertController = UIAlertController(title: "Select Players", message: nil, preferredStyle: .actionSheet)
 
         for player in playersArr {
+            print(player.name)
             let action = UIAlertAction(title: player.name, style: .default) { _ in
                 self.togglePlayerSelection(player: player)
             }
@@ -306,10 +307,18 @@ class EditAndNewEventViewController: UIViewController {
             }
             alertController.addAction(action)
         }
-        
+            
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-        
+
+        // Настройка места отображения для iPad
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.barButtonItem = self.navigationItem.rightBarButtonItems?.last // или другой UIBarButtonItem, откуда должен появиться ActionSheet
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+            
         present(alertController, animated: true, completion: nil)
     }
     
