@@ -1,5 +1,5 @@
 import UIKit
-import Firebase
+
 import SystemConfiguration.CaptiveNetwork
 import Network
 
@@ -13,8 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let navController = UINavigationController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        //FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
