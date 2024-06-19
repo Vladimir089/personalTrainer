@@ -14,11 +14,6 @@
 		15864DE42C132E63009F9BBC /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE32C132E63009F9BBC /* OneSignalFramework */; };
 		15864DE62C132E63009F9BBC /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE52C132E63009F9BBC /* OneSignalInAppMessages */; };
 		15864DE82C132E63009F9BBC /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DE72C132E63009F9BBC /* OneSignalLocation */; };
-		15864DEB2C132EFF009F9BBC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DEA2C132EFF009F9BBC /* FirebaseAnalytics */; };
-		15864DED2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DEC2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion */; };
-		15864DEF2C132EFF009F9BBC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DEE2C132EFF009F9BBC /* FirebaseAnalyticsSwift */; };
-		15864DF12C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF02C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		15864DF32C132EFF009F9BBC /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF22C132EFF009F9BBC /* FirebaseAppCheck */; };
 		15864DF62C132F18009F9BBC /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF52C132F18009F9BBC /* ApphudSDK */; };
 		15864DF92C132F4D009F9BBC /* AppMetricaAdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DF82C132F4D009F9BBC /* AppMetricaAdSupport */; };
 		15864DFB2C132F4D009F9BBC /* AppMetricaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 15864DFA2C132F4D009F9BBC /* AppMetricaCore */; };
@@ -106,18 +101,13 @@
 				15864E042C133375009F9BBC /* Alamofire in Frameworks */,
 				15864E152C133AAB009F9BBC /* SnapKit in Frameworks */,
 				15864DE62C132E63009F9BBC /* OneSignalInAppMessages in Frameworks */,
-				15864DED2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				15864DE42C132E63009F9BBC /* OneSignalFramework in Frameworks */,
 				15864DE82C132E63009F9BBC /* OneSignalLocation in Frameworks */,
-				15864DEF2C132EFF009F9BBC /* FirebaseAnalyticsSwift in Frameworks */,
-				15864DEB2C132EFF009F9BBC /* FirebaseAnalytics in Frameworks */,
 				15864DE22C132E63009F9BBC /* OneSignalExtension in Frameworks */,
 				15864DF62C132F18009F9BBC /* ApphudSDK in Frameworks */,
-				15864DF32C132EFF009F9BBC /* FirebaseAppCheck in Frameworks */,
 				15864DFB2C132F4D009F9BBC /* AppMetricaCore in Frameworks */,
 				15864DFF2C132F4D009F9BBC /* AppMetricaWebKit in Frameworks */,
 				15864DF92C132F4D009F9BBC /* AppMetricaAdSupport in Frameworks */,
-				15864DF12C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				15864DFD2C132F4D009F9BBC /* AppMetricaCrashes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,11 +346,6 @@
 				15864DE32C132E63009F9BBC /* OneSignalFramework */,
 				15864DE52C132E63009F9BBC /* OneSignalInAppMessages */,
 				15864DE72C132E63009F9BBC /* OneSignalLocation */,
-				15864DEA2C132EFF009F9BBC /* FirebaseAnalytics */,
-				15864DEC2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion */,
-				15864DEE2C132EFF009F9BBC /* FirebaseAnalyticsSwift */,
-				15864DF02C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport */,
-				15864DF22C132EFF009F9BBC /* FirebaseAppCheck */,
 				15864DF52C132F18009F9BBC /* ApphudSDK */,
 				15864DF82C132F4D009F9BBC /* AppMetricaAdSupport */,
 				15864DFA2C132F4D009F9BBC /* AppMetricaCore */,
@@ -399,7 +384,6 @@
 			mainGroup = 152E005E2C1313DC001DD14E;
 			packageReferences = (
 				15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
-				15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				15864DF42C132F18009F9BBC /* XCRemoteSwiftPackageReference "ApphudSDK" */,
 				15864DF72C132F4D009F9BBC /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
 				15864E022C133375009F9BBC /* XCRemoteSwiftPackageReference "Alamofire" */,
@@ -610,11 +594,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = personalTrainer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SquadSage;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Мы используем ваше местоположение для предоставления персонализированных уведомлений";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -644,11 +629,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = personalTrainer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SquadSage;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Мы используем ваше местоположение для предоставления персонализированных уведомлений";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -697,14 +683,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.2.0;
-			};
-		};
-		15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.27.0;
 			};
 		};
 		15864DF42C132F18009F9BBC /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
@@ -761,31 +739,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 15864DE02C132E63009F9BBC /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalLocation;
-		};
-		15864DEA2C132EFF009F9BBC /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		15864DEC2C132EFF009F9BBC /* FirebaseAnalyticsOnDeviceConversion */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsOnDeviceConversion;
-		};
-		15864DEE2C132EFF009F9BBC /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		15864DF02C132EFF009F9BBC /* FirebaseAnalyticsWithoutAdIdSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		15864DF22C132EFF009F9BBC /* FirebaseAppCheck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 15864DE92C132EFF009F9BBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAppCheck;
 		};
 		15864DF52C132F18009F9BBC /* ApphudSDK */ = {
 			isa = XCSwiftPackageProductDependency;

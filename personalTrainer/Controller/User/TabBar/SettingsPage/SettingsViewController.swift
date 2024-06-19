@@ -210,10 +210,17 @@ class SettingsViewController: UIViewController {
     
 
     @objc func shareApp() {
-        if let url = URL(string: "https://apps.apple.com/app/ПРИЛОЖЕНИЕ") {
+        if let url = URL(string: "https://apps.apple.com/app/squad-sage/id6504524266") {
             let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+            if let popoverController = activityViewController.popoverPresentationController {
+                popoverController.barButtonItem = self.navigationItem.rightBarButtonItems?.last
+                popoverController.sourceView = self.view
+                popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                popoverController.permittedArrowDirections = []
+            }
             present(activityViewController, animated: true, completion: nil)
         }
+        
     }
     
     @objc func usagePolicy() {

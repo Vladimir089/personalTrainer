@@ -19,7 +19,7 @@ class UsagePolicyWebView: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         self.view.addSubview(webView)
         
-        if let url = URL(string: "https://www.termsfeed.com/live/0c3271e1-482f-4c50-a8d3-f089b4674ed7") {
+        if let url = URL(string: "https://www.termsfeed.com/live/56edc093-3ed9-470e-a8ac-614b9723ced2") {
             let request = URLRequest(url: url)
             webView.load(request)
         }
